@@ -1,0 +1,340 @@
+:root{
+  --blue-dark: #0e1016;
+  --blue-primary: #5A6794;
+  --blue-secondary: #8794C0;
+  --blue-light: #E7E9EE;
+  --beige: #D8CDB0;
+
+  --white: #EEEAE3;
+  --grey-light: #cbc8c8;
+  --black: #201E1C;
+
+  --rubuk:'Rubik';
+}
+
+* { 
+  box-sizing: border-box; 
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 62.5%;
+  width: 100%;
+  font-family: var(--rubuk);
+  background-color: var(--blue-dark);
+}
+
+/* Header */
+.header-container{
+  width: 100%;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  padding: 0 .5rem;
+  flex-direction: column;
+}
+.header-content{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+}
+.header-nav{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+  margin-top: 20px;
+}
+.header-arrow{
+  font-size: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--blue-primary);
+}
+.header-title{
+  font-size: 2.5rem;
+  color: var(--white);
+  font-weight: 700;
+}
+.header-title--gradient{
+  background: linear-gradient(90deg, var(--blue-primary) 0%, var(--blue-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navMenu{
+  cursor: pointer;
+}
+.navMenu > span {
+  display: block;
+  width: 28px;
+  height: 2px;
+  border-radius: 9999px;
+  background-color: var(--blue-light);
+}
+.navMenu > span:not(:last-child){
+  margin-bottom: 7px; 
+}
+.navMenu, .navMenu > span {
+  transition: all 0.4s ease-in-out;
+}
+.navMenu.active{
+  transition-delay: 0.8s;
+  transform: rotate(45deg);
+}
+.navMenu.active > span:nth-child(2){
+  width:0;
+}
+.navMenu.active > span:nth-child(1),
+.navMenu.active > span:nth-child(3){
+  transition-delay: 0.4s;
+}
+.navMenu.active > span:nth-child(1){
+  transform: translateY(9px);
+}
+.navMenu.active > span:nth-child(3){
+  transform: translateY(-9px) rotate( -90deg);
+}
+
+.header-searchForm{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+.header-searchForm > input{
+  width: 70%;
+  height: 3rem;
+  border: none;
+  border-radius: 5px;
+  padding: 0 1rem;
+  font-size: 1.6rem;
+  color: var(--blue-secondary);
+}
+.header-searchForm > button{
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--blue-primary);
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+/* Trending */
+.trendingPreview-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: -20rem;
+}
+.trendingPreview-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.4rem;
+}
+.trendingPreview-title{
+  font-size: 1.5rem;
+  color: var(--white);
+  font-weight: 700;
+}
+.trendingPreview-btn{
+  width: 6.5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: var(--white);
+  background-color: var(--blue-primary);
+}
+.trendingPreview-movieList{
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  height: 241px;
+  padding-left: 24px;
+  padding-bottom: 16px;
+  margin-top: 2rem;
+}
+.trendingPreview-movieList .movie-container {
+  display: inline-block;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.trendingPreview-movieList .movie-container .movie-img {
+  height: 225px;
+  min-height: 225px;
+  max-height: 225px;
+  width: 150px;
+  min-width: 150px;
+  max-width: 150px;
+  border-radius: 8px;
+}
+/* Categories */
+.categoriesPreview-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+}
+.categoriesPreview-title{
+  font-size: 1.5rem;
+  color: var(--white);
+  font-weight: 700;
+  padding: 0 2.4rem;
+}
+.categoriesPreview-list{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 2rem;
+  margin-top: 2rem;
+}
+.category-container{
+  margin-top: 1rem;
+  margin-right: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: var(--blue-primary);
+}
+.category-container:hover{
+  background-color: var(--blue-secondary);
+}
+.category-title{  
+  text-align: center;
+  padding: 1rem 1rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--white);
+}
+
+/* Generic List (search, trending & category) */
+.genericList-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 32px 24px;
+}
+
+.genericList-container .movie-container {
+  display: inline-block;
+  width: 47.5%;
+}
+
+.genericList-container .movie-img {
+  width: 100%;
+  margin-bottom: 8px;
+  border-radius: 8px;
+}
+
+
+/* Movie Detail */
+.movieDetail-container {
+  height: 100%;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  padding: 32px 24px;
+  margin-top: -30px;
+  z-index: 1;
+  position: absolute;
+  background-color: var(--blue-light);
+}
+
+.movieDetail-title {
+  display: inline-block;
+  width: 80%;
+  margin: 0 0 16px 0;
+  padding: 0;
+}
+
+.movieDetail-score {
+  display: inline-block;
+  text-align: right;
+  width: 18%;
+  font-weight: var(--white);
+}
+.movieDetail-score::before {
+  content: '★';
+  color: var(--white);
+  padding-right: 4px;
+}
+
+.movieDetail-description {
+  margin: 0 0 24px 0;
+}
+
+.relatedMovies-container {
+  margin-top: 24px;
+  height: 216px;
+}
+
+.relatedMovies-title {
+  margin-bottom: 16px;
+}
+
+.relatedMovies-scrollContainer {
+  position: absolute;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  width: calc(100vw - 24px);
+  padding-bottom: 16px;
+}
+
+.relatedMovies-scrollContainer .movie-container {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.relatedMovies-scrollContainer .movie-img {
+  width: 125px;
+  min-width: 125px;
+  max-width: 125px;
+  height: 187.5px;
+  min-height: 187.5px;
+  max-height: 187.5px;
+}
+
+/* peliculas similares */
+.relatedMovies-scrollContainer{
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  height: 341px;
+  padding-left: 14px;
+  padding-bottom: 16px;
+  margin-top: 2rem;
+}
+.relatedMovies-scrollContainer .movie-container {
+  display: inline-block;
+  margin-right: 8px;
+  cursor: pointer;
+}
+.relatedMovies-scrollContainer .movie-container .movie-img {
+  height: 225px;
+  min-height: 225px;
+  max-height: 225px;
+  width: 150px;
+  min-width: 150px;
+  max-width: 150px;
+  border-radius: 8px;
+}
+
+
+/* Navigation */
+.inactive{
+  display:none;
+}
+
+
+.movieDetail-container .categories-list .category-container {
+  display: inline-block;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}

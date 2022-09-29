@@ -1,0 +1,19 @@
+{
+  "name": "api-movies",
+  "version": "1.0.0",
+  "description": "api de peliculas",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fernandocst03/api-movies.git"
+  },
+  "author": "@fernandocst03",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fernandocst03/api-movies/issues"
+  },
+  "homepage": "https://github.com/fernandocst03/api-movies#readme"
+}
