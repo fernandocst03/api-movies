@@ -9,7 +9,7 @@ const api = axios.create({
 });
 
 function likedMoviesList(){
-  const likedMovies = JSON.parse(localStorage.getItem('likedMovies')) || {};
+  const likedMovies = JSON.parse(localStorage.getItem('likedMovies')) || {}; 
   let movies;
 
   if (likedMovies){
