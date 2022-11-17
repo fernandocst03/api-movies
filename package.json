@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/fernandocst03/api-movies/issues"
   },
-  "homepage": "https://github.com/fernandocst03/api-movies#readme"
+  "homepage": "https://github.com/fernandocst03/api-movies#readme",
+  "type": "module"
 }
